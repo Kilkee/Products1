@@ -1,11 +1,13 @@
 package com.example.delaney.products1;
 
 import android.app.Activity;
+import android.support.v7.app.AlertDialog;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
 import android.widget.TextView;
+
 
 public class MainActivity extends Activity {
 // Declare references
@@ -26,7 +28,26 @@ public class MainActivity extends Activity {
          */
         dbHandler = new MyDBHandler(this, null, null, 1);
         printDatabase();
+
+
+
+
     }
+
+    private void insertItem(final boolean isEdit) {
+
+        AlertDialog.Builder builder = new AlertDialog.Builder(this);
+
+
+        builder.setTitle("My Title");
+        builder.setMessage("My message");
+        builder.setPositiveButton("OK", null);
+
+        builder.create().show();
+    }
+
+
+
 
     //Print the database
     public void printDatabase(){
@@ -42,6 +63,8 @@ public class MainActivity extends Activity {
         Products product = new Products(userInput.getText().toString());
         dbHandler.addProduct(product);
         printDatabase();
+
+
     }
 
     //Delete items
@@ -51,5 +74,13 @@ public class MainActivity extends Activity {
         dbHandler.deleteProduct(inputText);
         printDatabase();
     }
+
+    public void CalenderButtonClicked(View view){
+        // dbHandler delete needs string to find in the db
+        String inputText = userInput.getText().toString();
+        dbHandler.deleteProduct(inputText);
+        printDatabase();
+    }
+
 
 }
