@@ -27,9 +27,8 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignParentTop="true"
-
-        android:layout_marginTop="69dp"
-        android:text="Enter employee name" />
+        android:layout_marginTop="40dp"
+        android:text="Employee name" />
 
     <EditText
         android:layout_width="wrap_content"
@@ -37,7 +36,7 @@
         android:id="@+id/user_Input"
         android:layout_alignParentTop="true"
         android:layout_centerHorizontal="true"
-        android:layout_marginTop="69dp"
+        android:layout_marginTop="40dp"
         android:width="200dp" />
 
     </TableRow>
@@ -52,7 +51,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
 
-                android:layout_marginTop="69dp"
+
                 android:text="Start date:" />
 
             <EditText
@@ -61,7 +60,7 @@
                 android:id="@+id/start_date_Input"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="69dp"
+
                 android:width="200dp" />
 
         </TableRow>
@@ -75,8 +74,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-
-                android:layout_marginTop="69dp"
                 android:text="End date:" />
 
             <EditText
@@ -85,7 +82,6 @@
                 android:id="@+id/end_date_input"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="69dp"
                 android:width="200dp" />
 
         </TableRow>
@@ -100,8 +96,6 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
-
-                android:layout_marginTop="69dp"
                 android:text="Vacation Reason" />
 
             <EditText
@@ -110,7 +104,6 @@
                 android:id="@+id/reason"
                 android:layout_alignParentTop="true"
                 android:layout_centerHorizontal="true"
-                android:layout_marginTop="69dp"
                 android:width="200dp" />
 
         </TableRow>

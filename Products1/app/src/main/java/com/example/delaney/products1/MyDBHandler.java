@@ -11,7 +11,11 @@ public class MyDBHandler extends SQLiteOpenHelper {
     private static final String DATABASE_NAME = "productDB.db";
     public static final String TABLE_PRODUCTS = "products";
     public static final String COLUMN_ID = "_id";
-    public static final String COLUMN_PRODUCTNAME = "productname";
+    public static final String COLUMN_PRODUCTNAME = "productname";  //Database column names
+
+    public static final String COLUMN_STARTDATE = "startdate";
+    public static final String COLUMN_ENDDATE = "enddate";
+    public static final String COLUMN_REASON = "reason";
 
     //We need to pass database information along to superclass
     public MyDBHandler(Context context, String name, SQLiteDatabase.CursorFactory factory, int version) {
@@ -23,6 +27,9 @@ public class MyDBHandler extends SQLiteOpenHelper {
         String query = "CREATE TABLE " + TABLE_PRODUCTS + "(" +
                 COLUMN_ID + " INTEGER PRIMARY KEY AUTOINCREMENT, " +
                 COLUMN_PRODUCTNAME + " TEXT " +
+                COLUMN_STARTDATE + " TEXT " +
+                COLUMN_ENDDATE + " TEXT " +
+                COLUMN_REASON + " TEXT " +
                 ");";
         db.execSQL(query);
     }
@@ -35,7 +42,7 @@ public class MyDBHandler extends SQLiteOpenHelper {
 
     //Add a new row to the database
     public void addProduct(Products product){
-        ContentValues values = new ContentValues();
+        ContentValues values = new ContentValues();   // ContentValues is an android class that allows you to insert rows of info into your DB
         values.put(COLUMN_PRODUCTNAME, product.get_productname());
         SQLiteDatabase db = getWritableDatabase();
         db.insert(TABLE_PRODUCTS, null, values);
